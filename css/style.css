@@ -1,0 +1,169 @@
+/*
+^_^ Gantengkan
+*/
+
+html {
+  --f1c: #ce2339;
+  --f2c: #11182c;
+  --f3c: #fff;
+  
+  --dp: 8px;
+  --fonts: "Commissioner", sans-serif, serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--fonts);
+  font-size: 16px;
+  background: #fff;
+  color: var(--f2c);
+}
+:focus {
+  outline: 0;
+}
+::placeholder {
+  color: #eee;
+}
+input, textarea, button {
+  font-family: var(--fonts);
+  display: block;
+  background: transparent;
+  border: 0;
+  color: #fff;
+}
+button {
+  background: var(--f1c);
+  cursor: pointer;
+}
+a {
+  color: var(--f1c);
+  text-decoration: none;
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+}
+ul, ol {
+  list-style: none;
+}
+.container {
+  max-width: calc(var(--dp) * 148);
+  margin: 0 auto;
+  padding: 0 calc(var(--dp) * 2);
+}
+.container-fluid {
+  padding: 0 calc(var(--dp) * 2);
+}
+.fl {
+  display: flex;
+}
+.fl.fl-dco {
+  flex-direction: column;
+}
+.fl.fl-dro {
+  flex-direction: row;
+}
+.fl.fl-ca {
+  align-items: center;
+}
+.fl.fl-sa {
+  align-items: flex-start;
+}
+.fl.fl-ea {
+  align-items: flex-end;
+}
+.fl.fl-sba {
+  align-items: space-between;
+}
+.fl.fl-cj {
+  justify-content: center;
+}
+.fl.fl-sj {
+  justify-content: flex-start;
+}
+.fl.fl-ej {
+  justify-content: flex-end;
+}
+.fl.fl-sbj {
+  justify-content: space-between;
+}
+.fl.fl-cc {
+  justify-content: center;
+  align-items: center;
+}
+.fl.fl-wr {
+  flex-wrap: wrap;
+}
+.po.fi {
+  position: fixed;
+}
+.po.ab,
+.po.aba:after,
+.po.abb:before {
+  position: absolute;
+}
+.po.re {
+  position: relative;
+}
+.po.__vh0,
+.po.__vh0a:after,
+.po.__vh0b:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.po.__vh1,
+.po.__vh1a:after,
+.po.__vh1b:before {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.taC {
+  text-align: center;
+}
+.__btn {
+  height: calc(var(--dp) * 5);
+  padding: 0 calc(var(--dp) * 3);
+  line-height: calc(var(--dp) * 3);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .25px;
+  text-transform: uppercase;
+}
+.__msg {
+  top: 0;
+  right: 0;
+  padding: calc(var(--dp) * 4);
+  max-width: calc(var(--dp) * 44);
+  width: 100%;
+  gap: var(--dp);
+}
+.nTc {
+  padding: var(--dp) calc(var(--dp) * 1.5);
+  background: #0e1122;
+  color: #fff;
+  border-radius: calc(var(--dp) * 0.75);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .25px;
+  line-height: 24px;
+  box-shadow: 0 0 6px 0 #0003;
+}
+.nTc.nTcE {
+  background: #d10000;
+}
+.nTc.nTcI {
+  background: #03A9F4;
+}
+.nTc.nTcW {
+  background: #FF5722;
+}
+[disabled]{
+  opacity: .7;
+  cursor: not-allowed;
+}

@@ -1,0 +1,101 @@
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+::selection {
+  background: var(--f1c);
+  color: #fff;
+}
+body {
+  background: #f8fcff;
+  overflow: hidden auto;
+}
+#login {
+  min-height: 100vh;
+  max-width:  calc(var(--dp) * 66);
+  width: 100%;
+  margin: 0 auto;
+  padding: calc(var(--dp) * 3);
+  gap: calc(var(--dp) * 3);
+  z-index: 2;
+}
+input {
+  color: var(--f2c);
+  height: calc(var(--dp) * 6);
+  line-height: 24px;
+  width: 100%;
+  padding: 0 calc(var(--dp) * 2);
+  z-index: 3;
+}
+#login form {
+  background: #fff;
+  box-shadow: 0 0 calc(var(--dp) * 1.5) 0 #0003;
+  padding: calc(var(--dp) * 3);
+  gap: calc(var(--dp) * 3);
+  border-radius: calc(var(--dp) * 1.5);
+}
+.__inpbx .__br {
+  border: 1px solid var(--f2c);
+  opacity: .1;
+  transition: all .3s;
+}
+.__inpbx .__tt {
+  font-size: 14px;
+  padding: 0 calc(var(--dp) * 2);
+  z-index: 2;
+  transition: all .3s;
+  color: var(--f2c);
+  opacity: .7;
+}
+.__inpbx input:focus ~ .__tt {
+  opacity: 1;
+}
+.__inpbx input:focus ~ .__tt,
+.__inpbx input.__fx ~ .__tt {
+  transform: translateY(-24px);
+}
+.__inpbx input.__fx ~ .__tt span,
+.__inpbx input:focus ~ .__tt span {
+  background: #fff;
+  padding: 0 calc(var(--dp) * .5);
+}
+.__inpbx input:focus ~ .__tt span {
+  color: var(--f1c);
+}
+.__inpbx input:focus ~ .__br {
+  border-color: var(--f1c);
+  opacity: 1;
+}
+.__tt span {
+  line-height: 20px;
+}
+.__f {
+  gap: calc(var(--dp) * 2);
+  font-size: 14px;
+  /* background: #f8fcff; */
+}
+.__f span {
+  text-transform: uppercase;
+}
+.__f > span {
+  color: #fff;
+}
+.__f span a {
+  font-weight: 500;
+  letter-spacing: .25px;
+  color: #fff;
+  text-decoration: underline;
+}
+body:after {
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  right: -50%;
+  bottom: 0;
+  position: fixed;
+  content: "";
+  background: var(--f1c);
+  transform: skewX(-45deg);
+}
