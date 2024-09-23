@@ -342,6 +342,10 @@ main {
   height: calc(var(--dp) * 5);
   padding: 0 calc(var(--dp) * 2);
 }
+.__tabs-settings ul li.__swActived {
+  background: var(--f1c);
+  color: #fff;
+}
 .__switchS i,
 .__switchS .teX {
   z-index: 1;
