@@ -215,3 +215,41 @@ function jKi(a = []){
 		});
 	}
 }
+function jKj(b){
+	var a = new URLSearchParams(window.location.search);
+	if(a.has(b)){
+		return a.get(b);
+	}
+	return false;
+}
+function jKk(a, f = 0, b = 'asc'){
+	var c = a.sort((d, e) => {
+		if(d[f] < e[f]){
+			return -1;
+		} else if(d[f] > e[f]){
+			return 1;
+		}
+		return 0;
+	});
+	return c;
+}
+function jKl(a = '', b = '', d = ''){
+	var c = '<label class="po re __inpbx"><input type="';
+	if(a.match(/password/gi)){
+		c += 'password';
+	} else {
+		c += 'text';
+	}
+	c += '" name="'+a+'" id="'+a+'" class="po re" /><span class="po ab __vh0 __inpBr"></span><span class="po ab __inpTt">'+d+'</span></label>';
+	var e = setInterval(()=>{
+		if($('#'+a).length == 1){
+			clearInterval(e);
+			$('#'+a).val(b).trigger('change');
+		}
+	}, 100);
+	return c;
+}
+function jKm(b = 'material-symbols-outlined', c = 'Submit', d = 'save'){
+	var a = '<div class="fl fl-ca __frBtn"><button type="submit" class="fl fl-ca"><i class="'+b+'">'+d+'</i><span class="teX">'+c+'</span></button></div>';
+	return a;
+}
