@@ -99,3 +99,9 @@ body:after {
   background: var(--f1c);
   transform: skewX(-45deg);
 }
+.__msg {
+  z-index: 50;
+}
+.__msg .nTc {
+  box-shadow: 0 2px 2px #0003;
+}

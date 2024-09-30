@@ -126,6 +126,12 @@ ul, ol {
 .taC {
   text-align: center;
 }
+.teX {
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .__btn {
   height: calc(var(--dp) * 5);
   padding: 0 calc(var(--dp) * 3);
@@ -166,4 +172,27 @@ ul, ol {
 [disabled]{
   opacity: .7;
   cursor: not-allowed;
+}
+.__chkBxIn {
+  width: calc(var(--dp) * 5);
+  height: calc(var(--dp) * 5);
+}
+.__chkBx {
+  cursor: pointer;
+}
+.__chkBx .teX {
+  width: calc(100% - var(--dp) * 6);
+}
+.__chkBx input {
+  opacity: 0;
+}
+.__chkBx i {
+  font-size: 32px;
+  display: none;
+  color: #454b5f;
+}
+.__chkBx i.__inpCU,
+.__chkBx input:checked ~ i.__inpC {
+  z-index: 1;
+  display: block;
 }
