@@ -608,6 +608,9 @@ input[type=date]{
 .__tableRowsGrand {
   font-weight: 500;
 }
+.__msg {
+  z-index: 50;
+}
 @media(max-width: 768px){
   #sidebar {
     position: absolute;
