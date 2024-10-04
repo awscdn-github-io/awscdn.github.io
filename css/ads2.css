@@ -1,0 +1,65 @@
+/*
+*/
+html {
+  --f4c: #1c2b33;
+  --f5c: #283943;
+}
+body {
+  background: linear-gradient(-25deg, var(--f1c), #673AB7, #03A9F4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.__app-bg {
+  background: var(--f3c);
+  backdrop-filter: blur(5px);
+  opacity: .9;
+  z-index: 1;
+}
+app {
+  z-index: 2;
+}
+#sidebar {
+  width: calc(var(--dp) * 36);
+  height: 100vh;
+  overflow: auto;
+  padding: calc(var(--dp) * 10) 0 calc(var(--dp) * 4);
+}
+.__mnL li {
+  padding: 0 calc(var(--dp) * 3);
+  gap: var(--dp);
+  color: var(--f1c);
+  height: calc(var(--dp) * 6);
+  cursor: pointer;
+}
+.__mnL .teX {
+  width: calc(100% - var(--dp) * 4);
+  font-weight: 500;
+}
+.__mnL li i,
+.__mnL li .teX {
+  z-index: 2;
+}
+.__mnL li:after {
+  border-radius: 0 calc(var(--dp) * 3) calc(var(--dp) * 3) 0;
+  content: "";
+  z-index: 1;
+}
+.__mnL li:hover {
+  color: #fff;
+}
+.__mnL li:hover:after {
+  background: var(--f1c);
+}
+.__mnL li a {
+  z-index: 3;
+}
+#content {
+  width: calc(100% - var(--dp) * 36);
+  height: 100vh;
+  overflow: hidden auto;
+}
