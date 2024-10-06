@@ -166,7 +166,7 @@ nav {
   line-height: 20px;
 }
 .__cardIt {
-  width: calc((100% - var(--dp) * 8) / 5);
+  width: calc((100% - var(--dp) * 6) / 4);
   gap: var(--dp);
 }
 .__comp {
