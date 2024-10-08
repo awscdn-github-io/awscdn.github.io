@@ -223,14 +223,34 @@ function jKj(b){
 	return false;
 }
 function jKk(a, f = 0, b = 'asc'){
-	var c = a.sort((d, e) => {
-		if(d[f] < e[f]){
-			return -1;
-		} else if(d[f] > e[f]){
-			return 1;
-		}
-		return 0;
-	});
+	if(f){
+		var c = a.sort((d, e) => {
+			if(d[f] < e[f]){
+				return -1;
+			} else if(d[f] > e[f]){
+				return 1;
+			}
+			return 0;
+		});
+	} else {
+		var c = a.sort((d, e) => {
+			if(d < e){
+				if(b == 'asc'){
+					return -1;
+				} else {
+					return 1;
+				}
+			} else if(d > e){
+				if(b == 'asc'){
+					return 1;
+				} else {
+					return -1;
+				}
+			}
+			return 0;
+		});
+	}
+	
 	return c;
 }
 function jKl(a = '', b = '', d = ''){
