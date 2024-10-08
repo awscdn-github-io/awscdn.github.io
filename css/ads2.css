@@ -191,6 +191,7 @@ h1 {
   line-height: 28px;
   font-weight: 600;
   margin-bottom: calc(var(--dp) * 3);
+  text-shadow: 0 2px 2px #0003;
 }
 .__filDomain a,
 .__filDate {
