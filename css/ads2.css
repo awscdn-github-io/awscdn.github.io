@@ -5,7 +5,7 @@ html {
   --f5c: #283943;
   --f6c: #d2d8db;
   --f7c: 0 0 8px 2px #0001;
-  --f78: 0 0 8px 2px #0003;
+  --f8c: 0 0 8px 2px #0003;
 }
 ::-webkit-scrollbar {
   background: transparent;
@@ -380,13 +380,16 @@ h1 {
   background: #eee;
   content: "";
 }
-.profile-payment-card {
+.profile-payment-card,
+.__transaction-box,
+.__user-box {
   background: var(--f3c);
   box-shadow: var(--f7c);
   color: var(--f4c);
   padding: calc(var(--dp) * 2) calc(var(--dp) * 3);
   gap: calc(var(--dp) * 4);
   border-radius: calc(var(--dp) * 1.5);
+  margin-bottom: calc(var(--dp) * 3);
 }
 .payment-threshold {
   gap: var(--dp);
@@ -407,7 +410,9 @@ h1 {
   gap: calc(var(--dp) * 2.5);
   max-width: calc(var(--dp) * 80);
 }
-.payment-earning h2 {
+.payment-earning h2,
+.__transaction-box h2,
+.__user-box h2 {
   font-size: 18px;
   line-height: 22px;
   font-weight: 500;
@@ -415,4 +420,32 @@ h1 {
 .payment-data {
   font-size: 32px;
   line-height: 40px;
+}
+.payment-box {
+  gap: calc(var(--dp) * 3);
+}
+.__transaction-box,
+.__user-box {
+  width: calc(50% - var(--dp) * 1.5);)
+}
+.__transaction-box h2,
+.__user-box h2 {
+  margin-bottom: calc(var(--dp) * 1.5);
+  padding: 0 calc(var(--dp) * 3);
+}
+.__transaction-box,
+.__user-box {
+  padding: calc(var(--dp) * 2) 0 0;
+}
+.__open-box {
+  height: calc(var(--dp) * 7);
+  line-height: 20px;
+}
+.__open-box:after {
+  content: "";
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #eee;
 }
