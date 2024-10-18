@@ -302,9 +302,15 @@ h1 {
   position: relative;
   flex-direction: row;
   gap: calc(var(--dp) * 1.5);
+  opacity: 1;
+  visibility: visible;
+  background: transparent;
+  padding: 0;
+  box-shadow: 0 0;
 }
 .__inpSe[data-id=groupby] ul li {
   height: calc(var(--dp) * 5);
+  padding: 0;
 }
 .__inpSe[data-id=groupby] ul li.active {
   font-weight: 600;
@@ -426,11 +432,12 @@ h1 {
 }
 .__transaction-box,
 .__user-box {
-  width: calc(50% - var(--dp) * 1.5);)
+  width: calc(50% - var(--dp) * 1.5);
+  gap: var(--dp);
 }
 .__transaction-box h2,
 .__user-box h2 {
-  margin-bottom: calc(var(--dp) * 1.5);
+  margin-bottom: calc(var(--dp) * 1);
   padding: 0 calc(var(--dp) * 3);
 }
 .__transaction-box,
@@ -440,12 +447,243 @@ h1 {
 .__open-box {
   height: calc(var(--dp) * 7);
   line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
 }
-.__open-box:after {
+.__open-box:after,
+.__transaction-summary li:after {
   content: "";
   top: -1px;
   left: 0;
   right: 0;
   height: 1px;
   background: #eee;
+}
+.__user-meta {
+  padding: 0 calc(var(--dp) * 3) calc(var(--dp) * 2);
+}
+.__wiBox {
+  z-index: 4;
+  background: #0007;
+  padding: calc(var(--dp) * 3);
+}
+.__wiBox-bg {
+  z-index: 1;
+}
+.__wiBox h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.__wiBox-form {
+  background: #fff;
+  z-index: 2;
+  width: 100%;
+  max-width: calc(var(--dp) * 60);
+  max-height: calc(100vh - 6 * var(--dp));
+  overflow: hidden auto;
+  padding: calc(var(--dp) * 2) calc(var(--dp) * 3) calc(var(--dp) * 1);
+}
+.__wiBox-form form {
+  gap: calc(var(--dp) * 3);
+}
+.__inpbx {
+  
+}
+.__inpbx input {
+  height: calc(var(--dp) * 5);
+  padding: 0 calc(var(--dp) * 3);
+  color: var(--4c);
+  width: 100%;
+  z-index: 3;
+}
+.__inpbx .__inpTt {
+  transform-origin: 0 0;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background: transparent;
+  line-height: 40px;
+  padding: 0 calc(var(--dp) * 3);
+}
+.__inpbx .__inpBr {
+  border: 1px solid #eee;
+}
+.__inpbx input.__fx ~ .__inpTt,
+.__inpbx input:focus ~ .__inpTt {
+  transform: scale(.75) rotateX(360deg);
+  top: calc(var(--dp) * -1);
+  background: var(--f3c);
+  line-height: 20px;
+  padding: 0 calc(var(--dp) * 1);
+  margin-left: var(--dp);
+}
+.__wiBox-btn {
+  color: var(--f1c);
+  background: transparent;
+}
+.__wiBox-frBtn {
+  gap: var(--dp);
+}
+.__wiBox-frBtn a {
+  color: var(--f4c);
+}
+.__wiBox-frBtn a,
+.__wiBox-frBtn button {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 0 calc(var(--dp) * 1.25);
+  font-weight: 500;
+  height: calc(var(--dp) * 5);
+}
+.__inpSe .__seBt {
+  gap: var(--dp);
+  height: calc(var(--dp) * 5);
+  width: 100%;
+  color: var(--f4c);
+  box-shadow: 0 0 1px 1px #0002;
+  padding: 0 calc(var(--dp) * 3);
+  font-size: 14px;
+}
+.__inpSe .__seBt .teX {
+  width: calc(100% - var(--dp) * 4);
+}
+.__inpSe .__seBt i {
+  transform: rotateZ(0);
+  transition: all .3s linear;
+}
+.__inpSe.open .__seBt i {
+  transform: rotateX(180deg);
+}
+.__inpSe ul {
+  background: #fff;
+  transition: all .3s linear;
+  z-index: 10;
+  box-shadow: var(--f8c);
+  padding: calc(var(--dp) * 1.5) 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.__inpSe.open ul {
+  opacity: 1;
+  visibility: visible;
+}
+.__inpSe ul li {
+  height: calc(var(--dp) * 4);
+  padding: 0 calc(var(--dp) * 3);
+}
+.__admin-card {
+  gap: calc(var(--dp) * 3);
+}
+.__admin-transactions,
+.__admin-saldo {
+  width: calc((100% - var(--dp) * 3) / 2);
+  background: #fff;
+  box-shadow: var(--f7c);
+  border-radius: calc(var(--dp) * 1.5);
+  padding: 0;
+}
+.__admin-transactions h2,
+.__admin-saldo h2 {
+  font-size: 20px;
+  font-weight: 600;
+  padding: calc(var(--dp) * 1.5) calc(var(--dp) * 3);
+}
+.__admin-transactions .nTc {
+  margin: calc(var(--dp) * 1.5) calc(var(--dp) * 3);
+}
+.__transaction-summary li {
+  padding: calc(var(--dp) * 1.5) calc(var(--dp) * 3);
+}
+.__admin-kurs label {
+  background: var(--f3c);
+  box-shadow: var(--f7c);
+  height: calc(var(--dp) * 5);
+  width: 100%;
+  max-width: calc(var(--dp) * 28);
+  border-radius: var(--dp);
+  margin-bottom: calc(var(--dp) * 3);
+}
+.__admin-kurs i {
+  width: calc(var(--dp) * 5);
+  background: var(--f1c);
+  color: #fff;
+  height: calc(var(--dp) * 5);
+  border-radius: var(--dp) 0 0 var(--dp);
+}
+.__admin-kurs input {
+  color: var(--f2c);
+  width: calc(100% - var(--dp) * 10);
+  padding: 0 calc(var(--dp) * 1.5);
+  line-height: 20px;
+  font-size: 16px;
+}
+.__admEarn {
+  background: #fff;
+  box-shadow: var(--f8c);
+  border-radius: calc(var(--dp) * 1.5);
+}
+.__admEarn li .fl {
+  padding: 0 calc(var(--dp) * 3);
+  height: calc(var(--dp) * 5);
+  line-height: 20px;
+}
+.__admEarn li {
+  border-bottom: 1px solid #eee;
+}
+.__admEarn li:last-of-type {
+  border-bottom: 0 solid;
+}
+.fl1 {
+  flex: 1;
+}
+.__admCeEarning,
+.__admCeNetEarn {
+  width: calc(var(--dp) * 16);
+  text-align: right;
+}
+.__admCeShare {
+  width: calc(var(--dp) * 8);
+  text-align: center;
+}
+.__admCe {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.__admCe:after {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #eee;
+  width: 1px;
+  content: "";
+}
+.__admCeEarning {
+  padding-right: var(--dp);
+}
+.__admin-kurs a i {
+  border-radius: 0 var(--dp) var(--dp) 0;
+}
+.__transactions-saldo li,
+.__transaction-box li {
+  padding: var(--dp) calc(var(--dp) * 3);
+  gap: var(--dp);
+}
+.__transactions-saldo li:after,
+.__transaction-box li:after {
+  background: #eee;
+  content: "";
+  height: 1px;
+}
+.__mrPay {
+  width: calc(var(--dp) * 5);
+  height: calc(var(--dp) * 5);
+  background: var(--f1c);
+  color: var(--f3c);
+  border-radius: calc(var(--dp) * .75);
+}
+.__trSlVl,
+.__trSlMt {
+  width: calc((100% - var(--dp) * 7) / 2);
 }

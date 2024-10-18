@@ -253,13 +253,18 @@ function jKk(a, f = 0, b = 'asc'){
 	
 	return c;
 }
-function jKl(a = '', b = '', d = ''){
+function jKl(a = '', b = '', d = '', f = 'text'){
 	var c = '<label class="po re __inpbx"><input type="';
-	if(a.match(/password/gi)){
-		c += 'password';
+	if(f){
+		c += f;
 	} else {
-		c += 'text';
+		if(a.match(/password/gi)){
+			c += 'password';
+		} else {
+			c += 'text';
+		}
 	}
+	
 	c += '" name="'+a+'" id="'+a+'" class="po re" /><span class="po ab __vh0 __inpBr"></span><span class="po ab __inpTt">'+d+'</span></label>';
 	var e = setInterval(()=>{
 		if($('#'+a).length == 1){
@@ -272,4 +277,17 @@ function jKl(a = '', b = '', d = ''){
 function jKm(b = 'material-symbols-outlined', c = 'Submit', d = 'save'){
 	var a = '<div class="fl fl-ca __frBtn"><button type="submit" class="fl fl-ca"><i class="'+b+'">'+d+'</i><span class="teX">'+c+'</span></button></div>';
 	return a;
+}
+function jKn(a, f = ''){
+	var b = new Blob([a], {type: 'text/csv'}), c = document.createElement('a'), d = jKj('id');
+	if(f !== ''){
+		d = f;
+	}
+	c.download = d+'.csv';
+	c.href = window.URL.createObjectURL(b);
+	c.className = 'po ab __vh0 __nnn';
+	c.target = '_blank';
+	document.body.appendChild(c);
+	c.click();
+	document.body.removeChild(c);
 }
