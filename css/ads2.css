@@ -683,6 +683,11 @@ h1 {
   color: var(--f3c);
   border-radius: calc(var(--dp) * .75);
 }
+.__mrPayDis {
+  opacity: .7;
+  background: var(--f2c);
+  cursor: not-allowed;
+}
 .__trSlVl,
 .__trSlMt {
   width: calc((100% - var(--dp) * 7) / 2);
