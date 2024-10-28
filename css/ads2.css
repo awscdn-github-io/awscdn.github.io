@@ -595,6 +595,10 @@ h1 {
 .__transaction-summary li {
   padding: calc(var(--dp) * 1.5) calc(var(--dp) * 3);
 }
+.__admin-kurs {
+  margin-bottom: calc(var(--dp) * 3);
+  gap: var(--dp);
+}
 .__admin-kurs label {
   background: var(--f3c);
   box-shadow: var(--f7c);
@@ -602,7 +606,6 @@ h1 {
   width: 100%;
   max-width: calc(var(--dp) * 28);
   border-radius: var(--dp);
-  margin-bottom: calc(var(--dp) * 3);
 }
 .__admin-kurs i {
   width: calc(var(--dp) * 5);
@@ -659,7 +662,8 @@ h1 {
   width: 1px;
   content: "";
 }
-.__admCeEarning {
+.__admCeEarning,
+.__admCeNetEarn {
   padding-right: var(--dp);
 }
 .__admin-kurs a i {
@@ -691,4 +695,16 @@ h1 {
 .__trSlVl,
 .__trSlMt {
   width: calc((100% - var(--dp) * 7) / 2);
+}
+.__pdfSlip {
+  background: var(--f1c);
+  width: calc(var(--dp) * 4);
+  border-radius: var(--dp);
+  height: calc(var(--dp) * 4)!important;
+  color: #fff;
+  margin: 0 var(--dp);
+  padding: 0!important;
+}
+.__admin-kurs .__rmTra i {
+  border-radius: var(--dp);
 }
