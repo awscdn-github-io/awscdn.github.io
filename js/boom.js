@@ -41,6 +41,39 @@ __FS.ready(function(){
 		setTimeout(()=>{
 			$('body').removeClass('__nxapps');
 		}, 100);
+	}).on('click', '.__calIt', function(){
+		var a = $(this).text(), b = $(this).closest('.__inpCa'), c = b.attr('data-mm'), d = b.attr('data-yy'), f = $(this).closest('.__calWi').find('.__yearSelect').children('span').text();
+		b.children('[type=hidden]').val(d+'-'+c+'-'+jKr(a));
+		$(this).parent().children('.__calIt').removeClass('__calAc');
+		$(this).addClass('__calAc');
+		setTimeout(() => {
+			b.children('.__calOp').children('span').text(jKr(a)+' '+f);
+			b.children('.__calOp').removeClass('__calOpAc');
+		}, 100);
+	}).on('click', '.__calOp', function(){
+		$(this).toggleClass('__calOpAc');
+	}).on('click', '.__calMonth a', function(){
+		var a = $(this).closest('.__inpCa'), b = a.attr('data-yy'), c = a.attr('data-mm'), d = new Date();
+		b = parseInt(b), c = parseInt(c);
+		if($(this).hasClass('__prevMonth')){
+			d = new Date(b, (c-1), 1, 0, 0, 0);
+		} else {
+			d = new Date(b, (c+1), 1, 0, 0, 0);
+		}
+		var e = d.getTime(), f = (e-3600000*24), g = new Date(f), g1 = g.getFullYear(), g2 = g.getMonth(), g3 = g.getDate(), g4 = new Date(g1, g2, 1, 0, 0, 0).getDay(), h = '';
+		g2 = jKr(g2+1);
+		$(this).parent().parent().children('.__yearSelect').children('.teX').text(jKp(g.getMonth())+' '+g1);
+		if(g4 > 0){
+			for(var i=0; i<g4; i++){
+				h += '<span></span>';
+			}
+		}
+		for(var i=1; i<= g3; i++){
+			h += '<span class="__calIt">'+i+'</span>';
+		}
+		a.find('.__calBoxiB').html(h);
+		a.attr('data-yy', g1);
+		a.attr('data-mm', g2);
 	});
 });
 function AXf(a, b) {
@@ -290,4 +323,79 @@ function jKn(a, f = ''){
 	document.body.appendChild(c);
 	c.click();
 	document.body.removeChild(c);
+}
+function jKo(a = [], j = 'en'){
+	var b = [];
+	if(typeof a == 'string'){
+		b.push(a);
+	} else {
+		b = a;
+	}
+	if(b.length > 0){
+		b.forEach((c) => {
+			var d = '', e = $(c), fA = '', fB = '', fC = '', fD = '', fE = e.val(), h = fE, l = 30, o = 0, p = 1, q = jKd(10), r = 2024, s = 1;
+			if(typeof e.attr('min') == 'string'){
+				fA = e.attr('min');
+			}
+			if(typeof e.attr('max') == 'string'){
+				fB = e.attr('max');
+			}
+			if(typeof e.attr('name') == 'string'){
+				fC = e.attr('name');
+			}
+			if(typeof e.attr('id') == 'string'){
+				fD = e.attr('id');
+			}
+			if(fE.match(/^([0-9]{4})-([0-9]{2})-([0-9]{2})$/g)){
+				var g = fE.match(/^([0-9]{4})-([0-9]{2})-([0-9]{2})$/m), g1 = parseInt(g[1]), g2 = parseInt(g[2]), g3 = parseInt(g[3]), p = g3;
+				r = g1, s = g2;
+				g2 = (g2-1);
+				h = jKr(g3)+' '+jKp(g2, j)+' '+g1;
+				var m = new Date(g1, (g2+1), 1, 0, 0, 0).getTime(), l = new Date((m-(3600000*24))).getDate(), o = new Date(g1, g2, 1, 0, 0, 0).getDay();
+			}
+			var n = '';
+			if(o > 0){
+				for(var iB=0; iB<o; iB++){
+					n += '<span class="e"></span>';
+				}
+			}
+			for(var iA=1; iA<=l; iA++){
+				n += '<span class="__calIt ';
+				if(iA == p){
+					n += ' __calAc';
+				}
+				n += '">'+iA+'</span>';
+			}
+			d += '<div class="po re fl fl-ca __inpCa" data-attr="'+q+'" data-mm="'+s+'" data-yy="'+r+'"><a class="fl fl-ca po re __calOp"><span class="teX">'+h+'</span><i class="material-symbols-outlined">calendar_month</i></a>';
+			d += '<div class="po ab fl fl-dco __calWi"><div class="fl fl-ca fl-sbj __calWiData"><a class="fl fl-ca __yearSelect"><span class="teX">'+jKp(g2, j)+' '+g1+'</span><i class="material-symbols-outlined">arrow_drop_down</i></a><div class="fl fl-ca fl-sbj __calMonth"><a data-ttip="Prev" class="fl fl-cc __prevMonth"><i class="material-symbols-outlined">chevron_left</i></a><a data-ttip="Next" class="fl fl-cc __nextMonth"><i class="material-symbols-outlined">chevron_right</i></a></div></div><div class="fl fl-dco __calBox"><div class="fl fl-ca fl-sbj __calBoxi __calBoxiA">';
+			jKq('id').forEach((k) => {
+				d += '<span>'+k+'</span>';
+			});
+			d += '</div><div class="fl fl-ca fl-wr __calBoxi __calBoxiB">'+n+'</div></div></div>';
+			d += '<input type="hidden" id="'+fD+'" name="'+fC+'" value="'+fE+'" /></div>';
+			e.after(d);
+			e.remove();
+		});
+	}
+}
+function jKp(a, c = 'id'){
+	var b = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'];
+	if(c !== 'id'){
+		b = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	}
+	return b[a];
+}
+function jKq(a = 'id'){
+	var b = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
+	if(a !== 'id'){
+		b = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+	}
+	return b;
+}
+
+function jKr(a){
+	if(a.toString().length == 1){
+		return '0'+a;
+	}
+	return a;
 }

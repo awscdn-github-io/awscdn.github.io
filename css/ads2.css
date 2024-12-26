@@ -708,3 +708,75 @@ h1 {
 .__admin-kurs .__rmTra i {
   border-radius: var(--dp);
 }
+.__calWi {
+  top: calc(var(--dp) * 5);
+  background: #fff;
+  z-index: 2;
+  box-shadow: var(--f7c);
+  opacity: 0;
+  visibility: hidden;
+}
+.__calBox {
+  padding: var(--dp);
+}
+.__calBoxi {
+  gap: calc(var(--dp) * .5);
+}
+.__calBoxi span {
+  border: 0;
+  font-size: 14px;
+  padding: 0;
+  width: calc(var(--dp) * 4);
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+}
+.__calBoxi span:first-child,
+.__calBoxi span:nth-child(8),
+.__calBoxi span:nth-child(15),
+.__calBoxi span:nth-child(22),
+.__calBoxi span:nth-child(29),
+.__calBoxi span:nth-child(36) {
+  color: var(--f1c);
+}
+.__calBoxi span.__calAc {
+  font-weight: bold;
+  background: var(--f6c);
+}
+.__calBoxiB .__calIt {
+  cursor: pointer;
+}
+.__calBoxiB .__calIt:hover {
+  background: #eee;
+}
+.__calMonth a {
+  width: calc(var(--dp) * 4);
+  height: calc(var(--dp) * 4);
+  color: var(--f2c);
+}
+.__calWiData {
+  padding: var(--dp) calc(var(--dp) * 1.5);
+  border-bottom: 1px solid #0001;
+}
+a.__yearSelect {
+  color: var(--f2c);
+  font-size: 14px;
+  font-weight: 600;
+}
+a.__yearSelect span, a.__yearSelect i {
+  border: 0px;
+  line-height: 24px;
+}
+.__inpCa span {
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  cursor: pointer;
+}
+a.__calOp {
+  color: inherit;
+}
+a.__calOp.__calOpAc ~ .__calWi {
+  opacity: 1;
+  visibility: visible;
+}
