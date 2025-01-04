@@ -43,7 +43,7 @@ __FS.ready(function(){
 		}, 100);
 	}).on('click', '.__calIt', function(){
 		var a = $(this).text(), b = $(this).closest('.__inpCa'), c = b.attr('data-mm'), d = b.attr('data-yy'), f = $(this).closest('.__calWi').find('.__yearSelect').children('span').text();
-		b.children('[type=hidden]').val(d+'-'+c+'-'+jKr(a));
+		b.children('[type=hidden]').val(d+'-'+jKr(c)+'-'+jKr(a));
 		$(this).parent().children('.__calIt').removeClass('__calAc');
 		$(this).addClass('__calAc');
 		setTimeout(() => {
