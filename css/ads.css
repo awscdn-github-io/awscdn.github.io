@@ -635,4 +635,14 @@ input[type=date]{
   .__brand-title {
     width: calc(100% - var(--dp) * 8);
   }
+  .__ovBl {
+    flex-wrap: wrap;
+    row-gap: calc(var(--dp) * 2);
+  }
+  .__ovIt {
+    width: calc((100% - var(--dp)) / 2);
+  }
+  .__ovBxIt {
+    width: 100%;
+  }
 }
