@@ -1001,3 +1001,9 @@ ul.__eps {
     flex-direction: column;
   }
 }
+@media(max-width: 500px){
+  li.__movie-item,
+  .watch-list li {
+    width: calc((100% - var(--dp) * 3) / 2);
+  }
+}
