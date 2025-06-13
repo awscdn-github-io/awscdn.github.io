@@ -1,5 +1,5 @@
 html {
-  --f5c: #314de7;
+  --f5c: #FF9800;
   --f4c: linear-gradient(85deg, var(--f1c), var(--f1c), var(--f5c));
 }
 ::-webkit-scrollbar {
