@@ -1,0 +1,36 @@
+/*
+Ngeliatin apa sih dek?
+https://www.facebook.com/fsodic
+*/
+
+body {
+  background: #000;
+  overflow: hidden;
+}
+.__vxa {
+  background: radial-gradient(var(--f1c), #9C27B0);
+  height: 200vh;
+  width: 100%;
+  top: -100vh!important;
+  z-index: 1;
+}
+.__vx1 {
+  width: calc(var(--dp) * 12);
+  height: calc(var(--dp) * 12);
+  background: radial-gradient(var(--f1c), #9C27B0);
+  top: 100vh;
+  left: 0;
+  z-index: 5;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.__vx4 {
+  background: #0001;
+  z-index: 5;
+  backdrop-filter: blur(10px);
+}
+.__wrapper {
+  height: 100vh;
+  overflow: auto;
+  z-index: 2;
+}
